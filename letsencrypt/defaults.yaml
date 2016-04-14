@@ -2,3 +2,5 @@
 # vim: ft=yaml
 letsencrypt:
   cli_install_dir: /opt/letsencrypt
+  cron_hour: random
+  cron_minute: random

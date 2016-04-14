@@ -45,8 +45,8 @@ letsencrypt-crontab-{{ setname }}-{{ domainlist[0] }}:
           letsencrypt.cli_install_dir
         }}/letsencrypt-auto -d {{ domainlist|join(' -d ') }} certonly
     - month: '*'
-    - minute: random
-    - hour: random
+    - minute:  {{ letsencrypt.cron_minute }}
+    - hour:  {{ letsencrypt.cron_hour }}
     - dayweek: '*'
     - identifier: letsencrypt-{{ setname }}-{{ domainlist[0] }}
     - require:

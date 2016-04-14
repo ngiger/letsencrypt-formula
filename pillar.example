@@ -2,8 +2,15 @@ letsencrypt:
   config: |
     server = https://acme-v01.api.letsencrypt.org/directory
     email = webmaster@example.com
+    # if you want to use your running HTTP server and have a common web-root set the two following lines
     authenticator = webroot
     webroot-path = /var/lib/www
+    # if you want to stop your http server use the following variables.$
+    # The hour of the cron may be choosen to minimize the impact of
+    # authenticator = standalone
+    http_server = apache2
+    cron_hour =  2
+    # ============================
     agree-tos = True
     renew-by-default = True
   domainsets:
